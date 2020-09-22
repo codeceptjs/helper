@@ -1,8 +1,11 @@
 {
   "name": "@codeceptjs/helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Base class for CodeceptJS helpers",
   "main": "helper.js",
+  "files": [
+    "helper.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

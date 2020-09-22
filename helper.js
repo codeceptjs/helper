@@ -171,7 +171,7 @@ class Helper {
    * @type {*}
    */
   get helpers() {
-    const { container } = require('codeceptjs');
+    const { container } = global.codeceptjs;
     return container.helpers();
   }
 
@@ -181,7 +181,7 @@ class Helper {
    * @param {string} msg
    */
   debug(msg) {
-    const { output } = require('codeceptjs');
+    const { output } = global.codeceptjs;
     output.debug(msg);
   }
 
@@ -190,7 +190,7 @@ class Helper {
    * @param {string}  msg
    */
   debugSection(section, msg) {
-    const { output } = require('codeceptjs');
+    const { output } = global.codeceptjs;
     output.debug(`[${section}] ${msg}`);
   }
 }

@@ -14,7 +14,7 @@ Base class for all CodeceptJS helpers. This class has been moved into a separate
 const Helper = require('@codeceptjs/helper');
 
 class MyHelper extends Helper {
-	// implement custom helper here
+  // implement custom helper here
 }
 ```
 
