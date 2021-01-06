@@ -160,7 +160,7 @@ class Helper {
   _useTo(description, fn) {
     if (!description || !fn) throw new Error('useTo requires "description:string" and "fn:async function" as arguments');
     if (fn[Symbol.toStringTag] !== 'AsyncFunction') throw new Error(`Not async function!\n${fn}\nNative helpers API is asynchronous, please update this function be async`);
-    fn.toString = 'fn()';
+    fn.toString = () => 'fn()';
     return fn(this);
   }
 
