@@ -32,30 +32,31 @@ class MyHelper extends Helper {
         -   [Parameters](#parameters-2)
     -   [\_init](#_init)
     -   [\_before](#_before)
+        -   [Parameters](#parameters-3)
     -   [\_after](#_after)
     -   [\_test](#_test)
-        -   [Parameters](#parameters-3)
-    -   [\_passed](#_passed)
         -   [Parameters](#parameters-4)
-    -   [\_failed](#_failed)
+    -   [\_passed](#_passed)
         -   [Parameters](#parameters-5)
-    -   [\_beforeStep](#_beforestep)
+    -   [\_failed](#_failed)
         -   [Parameters](#parameters-6)
-    -   [\_afterStep](#_afterstep)
+    -   [\_beforeStep](#_beforestep)
         -   [Parameters](#parameters-7)
-    -   [\_beforeSuite](#_beforesuite)
+    -   [\_afterStep](#_afterstep)
         -   [Parameters](#parameters-8)
-    -   [\_afterSuite](#_aftersuite)
+    -   [\_beforeSuite](#_beforesuite)
         -   [Parameters](#parameters-9)
-    -   [\_finishTest](#_finishtest)
+    -   [\_afterSuite](#_aftersuite)
         -   [Parameters](#parameters-10)
-    -   [\_useTo](#_useto)
+    -   [\_finishTest](#_finishtest)
         -   [Parameters](#parameters-11)
+    -   [\_useTo](#_useto)
+        -   [Parameters](#parameters-12)
     -   [helpers](#helpers)
     -   [debug](#debug)
-        -   [Parameters](#parameters-12)
-    -   [debugSection](#debugsection)
         -   [Parameters](#parameters-13)
+    -   [debugSection](#debugsection)
+        -   [Parameters](#parameters-14)
     -   [\_config](#_config)
 
 ### Helper
@@ -100,6 +101,10 @@ Hook executed before all tests
 #### \_before
 
 Hook executed before each test.
+
+##### Parameters
+
+-   `test` **Mocha.Test** 
 
 #### \_after
 
