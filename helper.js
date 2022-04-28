@@ -58,18 +58,19 @@ class Helper {
 
   /**
    * Hook executed before each test.
-   * @param {Mocha.Test} test
+   * @param {Mocha.Test} [test]
    * @protected
    */
-  _before(test) {
+  _before(test = null) {
 
   }
 
   /**
    * Hook executed after each test
+   * @param {Mocha.Test} [test]
    * @protected
    */
-  _after() {
+  _after(test = null) {
 
   }
 
