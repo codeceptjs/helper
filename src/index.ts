@@ -12,11 +12,13 @@
  */
 
 class Helper {
+  private config: any;
+  private options: any;
   /**
    *
    * @param {*} config
    */
-  constructor(config) {
+  constructor(config: any) {
     this.config = config;
   }
 
@@ -35,7 +37,7 @@ class Helper {
    * @returns {*}
    * @protected
    */
-  _validateConfig(config) {
+  _validateConfig(config: any) {
     return config;
   }
 
@@ -44,7 +46,7 @@ class Helper {
    * @param {*} opts
    * @protected
    */
-  _setConfig(opts) {
+  _setConfig(opts: any) {
     this.options = this._validateConfig(opts);
   }
 
@@ -82,7 +84,7 @@ class Helper {
    * @protected
    */
   /* eslint-disable */
-  _test(test) {
+  _test(test: any) {
 
   }
 
@@ -92,7 +94,7 @@ class Helper {
    * @param {Mocha.Test} test
    * @protected
    */
-  _passed(test) {
+  _passed(test: any) {
 
   }
 
@@ -102,7 +104,7 @@ class Helper {
    * @param {Mocha.Test} test
    * @protected
    */
-  _failed(test) {
+  _failed(test: any) {
 
   }
 
@@ -112,7 +114,7 @@ class Helper {
    * @param {CodeceptJS.Step} step
    * @protected
    */
-  _beforeStep(step) {
+  _beforeStep(step: any) {
 
   }
 
@@ -122,7 +124,7 @@ class Helper {
    * @param {CodeceptJS.Step} step
    * @protected
    */
-  _afterStep(step) {
+  _afterStep(step: any) {
 
   }
 
@@ -132,7 +134,7 @@ class Helper {
    * @param {Mocha.Suite} suite
    * @protected
    */
-  _beforeSuite(suite) {
+  _beforeSuite(suite: any) {
 
   }
 
@@ -142,7 +144,7 @@ class Helper {
    * @param {Mocha.Suite} suite
    * @protected
    */
-  _afterSuite(suite) {
+  _afterSuite(suite: any) {
 
   }
 
@@ -152,15 +154,16 @@ class Helper {
    * @param {Mocha.Suite} suite
    * @protected
    */
-  _finishTest(suite) {
+  _finishTest(suite: any) {
 
   }
 
   /**
   * Abstract method to provide common interface to accessing helpers internals inside a test.
   */
-  _useTo(description, fn) {
+  _useTo(description: string, fn: any) {
     if (!description || !fn) throw new Error('useTo requires "description:string" and "fn:async function" as arguments');
+    //@ts-ignore
     if (fn[Symbol.toStringTag] !== 'AsyncFunction') throw new Error(`Not async function!\n${fn}\nNative helpers API is asynchronous, please update this function be async`);
     fn.toString = () => 'fn()';
     return fn(this);
@@ -173,6 +176,7 @@ class Helper {
    * @type {*}
    */
   get helpers() {
+    // @ts-ignore
     const { container } = global.codeceptjs || require('codeceptjs');
     return container.helpers();
   }
@@ -182,7 +186,8 @@ class Helper {
    *
    * @param {string} msg
    */
-  debug(msg) {
+  debug(msg: string) {
+    // @ts-ignore
     const { output } = global.codeceptjs || require('codeceptjs');
     output.debug(msg);
   }
@@ -191,10 +196,11 @@ class Helper {
    * @param {string}  section
    * @param {string}  msg
    */
-  debugSection(section, msg) {
+  debugSection(section: any, msg: string) {
+    // @ts-ignore
     const { output } = global.codeceptjs || require('codeceptjs');
     output.debug(`[${section}] ${msg}`);
   }
 }
 
-module.exports = Helper;
+export default Helper;
