@@ -178,7 +178,7 @@ class Helper {
   get helpers() {
     // @ts-ignore
     const { container } = global.codeceptjs || require('codeceptjs');
-    return container.helpers();
+    return container.default ? container.default.helpers() :container.helpers();
   }
 
   /**
@@ -189,7 +189,7 @@ class Helper {
   debug(msg: string) {
     // @ts-ignore
     const { output } = global.codeceptjs || require('codeceptjs');
-    output.debug(msg);
+    output.output ? output.output.debug(msg) : output.debug(msg);
   }
 
   /**
@@ -199,7 +199,7 @@ class Helper {
   debugSection(section: any, msg: string) {
     // @ts-ignore
     const { output } = global.codeceptjs || require('codeceptjs');
-    output.debug(`[${section}] ${msg}`);
+    output.output ? output.output.debug(`[${section}] ${msg}`) : output.debug(`[${section}] ${msg}`);
   }
 }
 
